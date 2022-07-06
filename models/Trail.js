@@ -2,39 +2,35 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Review extends Model {}
+class Trail extends Model {}
 
-Review.init(
+Trail.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-          },
-        star: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
         },
-        message: {
-            type: DataTypes.STRING,
-            allowNull: false
+        trail_name: {
+            type: DataTypes.String,
         },
-        review_id: {
+        trail_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "User",
+                model: "Review",
                 key: "id"
             }
         }
-    }, 
+    },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'review',
+        modelName: 'trail',
     }
 )
 
-module.exports = Review;
+
+module.exports = Trail;
