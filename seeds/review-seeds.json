@@ -1,0 +1,14 @@
+[
+    {
+        "star": "3",
+        "message": "This was a mediocre park."
+    },
+    {
+        "star": "5",
+        "message": "Amazing park!"
+    },
+    {
+        "star": "1",
+        "message": "This park was horrible!"
+    }
+]
