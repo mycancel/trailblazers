@@ -1,4 +1,6 @@
-[
+const { Park } = require("../models")
+
+const parkData = [
     {
         "park_name": "Yellowstone",
         "park_address": "1234 Central Drive",
@@ -17,4 +19,8 @@
         "park_contact": "444-555-7777",
         "park_description": "Fun park to take your kids to"
     }
-]
+]; 
+
+const seedPark = () => Park.bulkCreate(parkData)
+
+module.exports = seedPark; 
