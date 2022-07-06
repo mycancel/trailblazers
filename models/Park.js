@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Trail extends Model {}
+class Park extends Model {}
 
-Trail.init(
+Park.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,10 +12,22 @@ Trail.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        trail_name: {
+        park_name: {
             type: DataTypes.String,
         },
-        trail_id: {
+        park_address: {
+            type: DataType.String,
+            allowNull: false,
+        },
+        park_contact: {
+            type: DataType.String,
+            allowNull: false
+        },
+        park_description: {
+            type: DataType.String,
+            allowNull: false
+        },
+        park_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: "Review",
@@ -28,9 +40,9 @@ Trail.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'trail',
+        modelName: 'park',
     }
 )
 
 
-module.exports = Trail;
+module.exports = Park;
