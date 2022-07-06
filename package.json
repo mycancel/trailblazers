@@ -1,5 +1,5 @@
 {
-  "name": "crowd-funding",
+  "name": "trailblazers_db",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/seed.js",
+    "preseed": "node config/init.js",
     "lint": "npx eslint \"**/*.js\"",
     "lint:fix": "npx eslint \"**/*.js\" --fix"
   },
@@ -23,7 +24,6 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-    
   },
   "devDependencies": {
     "eslint": "^7.32.0",
