@@ -20,4 +20,4 @@ const formHandler = async (event) => {
 };
 
 // TODO: add queryselectors
-// document.querySelector('').addEventListener('submit', formHandler);
+// document.querySelector('#search-form').addEventListener('submit', formHandler);
