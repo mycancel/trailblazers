@@ -2,7 +2,11 @@ const favCheckBox = async () => {
   // TODO: Check if this.checked returns a boolean value
   // console.log(this.checked);
   if (this.checked) {
-    const parkCode = '';
+    // pathname = '/park/:code'
+    const pathname = window.location.pathname;
+    const parkCode = pathname.slice(6);
+    // TODO: Check if parkCode is correct
+    // console.log(parkCode)
 
     const response = await fetch("/api/favorites", {
       method: "POST",
