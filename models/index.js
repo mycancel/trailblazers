@@ -1,6 +1,6 @@
 const User = require('./User');
 const Review = require("./Review");
-const Trail = require("./Trail")
+const Park = require("./Park")
 // TODO: ADD RELATIONSHIPS
 
 Review.belongsTo(User, {
@@ -11,8 +11,8 @@ User.hasMany(Review, {
     foreignKey: "review_id"
 })
 
-Trail.belongsToMany(Review, {
+Review.belongsToMany(Park, {
     foreignKey: "review_id"
 })
 
-module.exports = { User, Review, Trail };
+module.exports = { User, Review, Park };
