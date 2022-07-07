@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Farorite } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
   res.render('index');
 });
 
