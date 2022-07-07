@@ -1,16 +1,20 @@
 const User = require('./User');
 const Favorite = require("./Favorite");
-
 // TODO: ADD RELATIONSHIPS
 
 Favorite.belongsTo(User, {
-    foreignKey: "review_id"
+    foreignKey: "user_id"
 })
 
 User.hasMany(Favorite, {
-    foreignKey: "review_id"
+    foreignKey: "user_id"
 })
 
+// Park.belongsTo(User, {
+//     foreignKey: "user_id"
+// })
 
 
-module.exports = { User, Review,};
+
+
+module.exports = { User, Favorite };

@@ -12,13 +12,17 @@ Favorite.init(
             primaryKey: true,
             autoIncrement: true,
           },
-        checked: {
+        value: {
             type: DataTypes.BOOLEAN,
+        },
+        park_code: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         Favorite_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "park",
+                model: "user",
                 key: "id"
             }
         }
