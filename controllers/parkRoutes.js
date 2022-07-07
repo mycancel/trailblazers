@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const axios = require("axios");
+require('dotenv').config();
 
 // Returns data for specific park
 function getPark(parkCode) {
@@ -16,7 +17,7 @@ function getPark(parkCode) {
 
   axios
     .get(
-      `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=NkH26hNE8uCOcIC7vkfHHuLqFaIv9UUy6uuQJGqC`,
+      `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${process.env.API}`,
       requestOptions
     )
     // retrieves data property from axios response
