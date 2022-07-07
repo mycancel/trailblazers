@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 require('dotenv').config();
 
 const formHandler = async (event) => {
@@ -7,32 +7,33 @@ const formHandler = async (event) => {
   const stateCode = document.querySelector('#state-code').value;
   const activityId = document.querySelector('#activity-id').value;
 
-  const results = getAllParks(stateCode, activityId)
+  const results = await getAllParks(stateCode, activityId)
+  console.log(results);
 
   // Send fetch request get search results
-  const response = await fetch("/", {
-    method: "POST",
+  const response = await fetch('/', {
+    method: 'POST',
     body: JSON.stringify(results),
-    headers: { "Content-Type": "application/json" },
+    headers: { 'Content-Type': 'application/json' },
   });
 
   if (response.ok) {
-    document.location.replace("/");
+    document.location.replace('/');
   } else {
-    alert("Failed to find parks.");
+    alert('Failed to find parks.');
   }
 };
 
 // Returns search results of all parks according to state and activity
-function getAllParks(stateCode, activityId) {
+const getAllParks = (stateCode, activityId) => {
   // TODO: Check if info is being recieved from search.js
   console.log(stateCode, activityId);
   const requestOptions = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
-    redirect: "follow",
+    redirect: 'follow',
   };
 
   axios
@@ -71,7 +72,7 @@ function getAllParks(stateCode, activityId) {
       // returns new array with parks in specified state
       return results;
     })
-    .catch((error) => console.log("error", error));
+    .catch((error) => console.log('error', error));
 }
 
 document.querySelector('#search-form').addEventListener('submit', formHandler);
