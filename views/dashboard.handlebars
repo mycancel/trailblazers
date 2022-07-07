@@ -1,9 +1,10 @@
 <div class="card bg-light mb-3" style="max-width: 18rem;">
     <div class="card-header">Dashboard</div>
     <div class="card-body">
-        <h5 class="card-title">Previous Searches</h5>
+        {{#if logged_in}}
+        <h2 class="card-title">Favorite Parks</h2>
 
-        {{!-- add for each image link cards to populate searches --}}
+        {{!-- add for each image link cards to populate favorites --}}
         {{!-- <div class="card-group">
             <div class="card">
                 <img src="..." class="card-img-top" alt="...">
@@ -16,5 +17,9 @@
             </div>
 
         </div> --}}
-        
+        {{/if}}
+
+        <h3>Please login to access Favorites feature.</h3>
+
     </div>
+</div>
