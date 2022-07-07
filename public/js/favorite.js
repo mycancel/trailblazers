@@ -1,23 +1,48 @@
-async function favCheckBox() {
-    const title = $('input[name="post-title"]').value;
-    const post_text = $('textarea[name="post-text"]').value;
+const favCheckBox = async () => {
+  // TODO: Check if this.checked returns a boolean value
+  // console.log(this.checked);
+  if (this.checked) {
+    // pathname = '/park/:code'
+    const pathname = window.location.pathname;
+    const parkCode = pathname.slice(6);
+    // TODO: Check if parkCode is correct
+    // console.log(parkCode)
 
-    const response = await fetch('/api/post', {
-        method: 'POST', 
-        body: JSON.stringify({
-            title,
-            post_text
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+    const response = await fetch("/api/favorites", {
+      method: "POST",
+      body: JSON.stringify({ parkCode: parkCode }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
+      console.log("Park favorited.");
     } else {
-        alert(response.statusText);
+      alert(response.statusText);
     }
-}
+  } else {
+    // pathname = '/park/:code'
+    const pathname = window.location.pathname;
+    const parkCode = pathname.slice(6);
+    // TODO: Check if parkCode is correct
+    // console.log(parkCode)
 
-document.querySelector('').addEventListener('change', favCheckBox)
+    const response = await fetch("/api/favorites", {
+      method: "DELETE",
+      body: JSON.stringify({ parkCode: parkCode }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      console.log("Park unfavorited.");
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+// TODO: queryselect input type=checkbox
+// document.querySelector('').addEventListener('change', favCheckBox)
