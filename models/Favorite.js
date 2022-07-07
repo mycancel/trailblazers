@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Review extends Model {}
+class Favorite extends Model {}
 
-Review.init(
+Favorite.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,18 +12,13 @@ Review.init(
             primaryKey: true,
             autoIncrement: true,
           },
-        star: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+        checked: {
+            type: DataTypes.BOOLEAN,
         },
-        message: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        review_id: {
+        Favorite_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "User",
+                model: "park",
                 key: "id"
             }
         }
@@ -33,8 +28,8 @@ Review.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'review',
+        modelName: 'favorite',
     }
 )
 
-module.exports = Review;
+module.exports = Favorite;
