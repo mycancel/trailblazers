@@ -3,6 +3,8 @@ const axios = require("axios");
 
 // Returns search results of all parks according to state and activity
 function getAllParks({ stateCode, activityId }) {
+  // TODO: Check if info is being recieved from search.js
+  // console.log(stateCode, activityId);
   const requestOptions = {
     method: "GET",
     headers: {
