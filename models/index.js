@@ -12,6 +12,7 @@ User.hasMany(Review, {
 })
 
 Review.belongsToMany(Park, {
+    through: Park,
     foreignKey: "review_id"
 })
 

@@ -13,18 +13,18 @@ Park.init(
             autoIncrement: true,
         },
         park_name: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
         },
         park_address: {
-            type: DataType.String,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         park_contact: {
-            type: DataType.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         park_description: {
-            type: DataType.String,
+            type: DataTypes.STRING,
             allowNull: false
         },
         park_id: {
