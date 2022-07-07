@@ -2,8 +2,8 @@ const formHandler = async (event) => {
   event.preventDefault();
 
   // TODO: add .value and .trim to query selections in variables below
-  const stateCode = "MD";
-  const activityId = "C11D3746-5063-4BD0-B245-7178D1AD866C";
+  const stateCode = document.querySelector('#search-form').value();
+  const activityId = document.querySelector('#search-form').value();
 
   // Send fetch request get search results
   const response = await fetch("/search", {
@@ -19,5 +19,4 @@ const formHandler = async (event) => {
   }
 };
 
-// TODO: add queryselectors
-// document.querySelector('#search-form').addEventListener('submit', formHandler);
+document.querySelector('#search-form').addEventListener('submit', formHandler);
