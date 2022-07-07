@@ -11,30 +11,32 @@
 
 <header class="container-fluid ">
 
-<h1><a href="/">Trailblazers</a></h1>
+<div class="bg-dark">
+  <h1><a href="/">Trailblazers</a></h1>
 
-<ul class="nav justify-content-end">
+  <ul class="nav justify-content-end">
 
-  {{#if logged_in}}
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Dashboard</a>
-  </li>
-  <li class="nav-item">
-    <a class="button" id="logout">Logout</a>
-  </li>
-  {{/if}}
+    {{#if logged_in}}
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="button" id="logout">Logout</a>
+    </li>
+    {{/if}}
 
-  <li class="nav-item">
-    <a class="nav-link" href="#">Dashboard</a>
-  </li>
-  <li class="nav-item">
-    <a href="/login" class="nav-link">Login</a>
-  </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a href="/login" class="nav-link">Login</a>
+    </li>
   
-</ul>
+  </ul>
+</div>
 
 </header>
-<body>
+<body class="bg-dark">
   {{{body}}}
 </body>
 </html>
