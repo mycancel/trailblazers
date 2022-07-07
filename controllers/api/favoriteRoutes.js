@@ -1,9 +1,8 @@
-const router = require("express").router();
-const { Favorite } = require("../../models");
-
+const router = require('express').router();
+const { Favorite } = require('../../models');
 
 // post a favorite
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const favoriteData = await Favorite.create({
             park_code: req.body.parkCode,
@@ -15,17 +14,17 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 // remove a favorite
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete('/', async (req, res) => {
   try {
     const favoriteData = await Favorite.destroy({
       where: {
-        id: req.params.id,
+        park_code: req.body.parkCode,
         user_id: req.session.user_id,
       },
     });
 
     if (!favoriteData) {
-      res.status(404).json({ message: "No favorite found with this id!" });
+      res.status(404).json({ message: 'No favorite found with this id!' });
       return;
     }
 
