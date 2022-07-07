@@ -10,11 +10,4 @@ User.hasMany(Favorite, {
     foreignKey: "user_id"
 })
 
-// Park.belongsTo(User, {
-//     foreignKey: "user_id"
-// })
-
-
-
-
 module.exports = { User, Favorite };
