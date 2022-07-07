@@ -11,7 +11,7 @@
 5. [Resources](#resources)
 
 ## DESCRIPTION
-Our project is going to be a National Parks hub for park activities. We are using an API created by the National Park Service (NPS). This will allow our user to find parks, see and add reviews of the park. Park data includes the address, contact information, description, hours of operation and available activities.
+Our project is going to be a National Parks hub for park information and activities. We are using an API created by the National Park Service (NPS). This will allow our user to find parks, general information on the park, and activities within the park. Users will also be able to see and add reviews of the park. Park data includes the address, contact information, description, hours of operation and available activities.
 
 
 ## USAGE

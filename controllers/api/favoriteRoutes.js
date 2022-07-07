@@ -1,37 +1,38 @@
 const router = require("express").router();
-const { User, Favorite } = require("../../models");
+const { Favorite } = require("../../models");
 
 
-// post a post
+// post a favorite
 router.post('/', withAuth, async (req, res) => {
     try {
-        const postData = await post.create({
-            title: req.body.title,
-            post_text: req.body.post_text,
-            user_id: req.body.user_id
+        const favoriteData = await Favorite.create({
+            park_code: req.body.parkCode,
+            user_id: req.session.user_id
         })
-        res.status(200).json(postData);
+        res.status(200).json(favoriteData);
     } catch (err) {
         res.status(400).json(err);
     }
 });
-// delete post
+// remove a favorite
 router.delete("/:id", withAuth, async (req, res) => {
   try {
-    const postData = await post.destroy({
+    const favoriteData = await Favorite.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.post_id,
+        user_id: req.session.user_id,
       },
     });
 
-    if (!postData) {
-      res.status(404).json({ message: "No post found with this id!" });
+    if (!favoriteData) {
+      res.status(404).json({ message: "No favorite found with this id!" });
       return;
     }
 
-    res.status(200).json(postData);
+    res.status(200).json(favoriteData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
