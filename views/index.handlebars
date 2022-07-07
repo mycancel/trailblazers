@@ -1,41 +1,83 @@
-<div class="card text-center">
-
-    <div class="card-header">
+<div class="container text-center">
+    <div class="jumbotron">
         Search for a Park
     </div>
-
-    <div class="card-body">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-expanded="false">
-                State
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Alabama</a>
-                <a class="dropdown-item" href="#">Alaska</a>
-                <a class="dropdown-item" href="#">Arizona</a>
-            </div>
+   
+    <div class="card-body bg-dark">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">State</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>AK</option>
+                <option>AL</option>
+                <option>AR</option>
+                <option>AZ</option>
+                <option>CA</option>
+                <option>CO</option>
+                <option>CT</option>
+                <option>DE</option>
+                <option>FL</option>
+                <option>GA</option>
+                <option>HI</option>
+                <option>IA</option>
+                <option>ID</option>
+                <option>IL</option>
+                <option>IN</option>
+                <option>KS</option>
+                <option>KY</option>
+                <option>LA</option>
+                <option>MA</option>
+                <option>MD</option>
+                <option>ME</option>
+                <option>MI</option>
+                <option>MN</option>
+                <option>MO</option>
+                <option>MS</option>
+                <option>MT</option>
+                <option>NC</option>
+                <option>ND</option>
+                <option>NE</option>
+                <option>NH</option>
+                <option>NJ</option>
+                <option>NM</option>
+                <option>NV</option>
+                <option>NY</option>
+                <option>OH</option>
+                <option>OK</option>
+                <option>OR</option>
+                <option>PA</option>
+                <option>RI</option>
+                <option>SC</option>
+                <option>SD</option>
+                <option>TN</option>
+                <option>TX</option>
+                <option>UT</option>
+                <option>VA</option>
+                <option>WA</option>
+                <option>WI</option>
+                <option>WV</option>
+                <option>WY</option>
+            </select>
         </div>
-
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-expanded="false">
-                Activity
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Hiking</a>
-                <a class="dropdown-item" href="#">Other park stuff</a>
-                <a class="dropdown-item" href="#">Some more park stuff</a>
-            </div>
-        </div>
-
-        <a href="#" class="btn btn-primary"> Search</a>
-
     </div>
-    
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Activities</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>Hiking</option>
+            <option>Astronomy</option>
+            <option>Auto and ATV</option>
+            <option>Biking</option>
+            <option>Boating</option>
+            <option>Camping</option>
+            <option>Climbing</option>
+        </select>
+    </div>
+        <button type="submit" type="button">Search</button>
+    </div>
+
 </div>
 
-<section>
+<section class="card-group" >
 
     <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
@@ -60,4 +102,4 @@
 
 </section>
 
-{{!-- <script>add path for search js</script> --}}
+<script src="./public/js/search.js"></script>
