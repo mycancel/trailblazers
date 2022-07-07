@@ -50,7 +50,7 @@ function getAllParks({ stateCode, activityId }) {
     .catch((error) => console.log("error", error));
 }
 
-// Route to view Dashboard with articles created by user
+// Route to view search results
 router.get("/", async (req, res) => {
   try {
     const parks = getAllParks(...req.body);
@@ -58,7 +58,7 @@ router.get("/", async (req, res) => {
     // Serializes data
     const results = JSON.parse(JSON.stringify(parks));
 
-    // Renders articles to homepage
+    // Renders parks to homepage
     res.render("search", {
       results,
       loggedIn: req.session.logged_in,
