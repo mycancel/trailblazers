@@ -1,106 +1,105 @@
 <div class="container text-center">
-    <div class="jumbotron">
-        Search for a Park
-    </div>
-    
-    <div class="card-body">
-        <div class="form-group text-white">
-            <label for="exampleFormControlSelect1">State</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>AK</option>
-                <option>AL</option>
-                <option>AR</option>
-                <option>AZ</option>
-                <option>CA</option>
-                <option>CO</option>
-                <option>CT</option>
-                <option>DE</option>
-                <option>FL</option>
-                <option>GA</option>
-                <option>HI</option>
-                <option>IA</option>
-                <option>ID</option>
-                <option>IL</option>
-                <option>IN</option>
-                <option>KS</option>
-                <option>KY</option>
-                <option>LA</option>
-                <option>MA</option>
-                <option>MD</option>
-                <option>ME</option>
-                <option>MI</option>
-                <option>MN</option>
-                <option>MO</option>
-                <option>MS</option>
-                <option>MT</option>
-                <option>NC</option>
-                <option>ND</option>
-                <option>NE</option>
-                <option>NH</option>
-                <option>NJ</option>
-                <option>NM</option>
-                <option>NV</option>
-                <option>NY</option>
-                <option>OH</option>
-                <option>OK</option>
-                <option>OR</option>
-                <option>PA</option>
-                <option>RI</option>
-                <option>SC</option>
-                <option>SD</option>
-                <option>TN</option>
-                <option>TX</option>
-                <option>UT</option>
-                <option>VA</option>
-                <option>WA</option>
-                <option>WI</option>
-                <option>WV</option>
-                <option>WY</option>
-            </select>
+  <div class="jumbotron">
+    Search for a Park
+  </div>
 
-        </div>
+  <form class="card-body" id="search-form">
+    <div class="form-group text-white">
+      <label for="state-code">State</label>
+      <select class="form-control" id="state-code">
+        <option value = "AK">AL</option>
+        <option value = "AL">AR</option>
+        <option value = "AR">AK</option>
+        <option value = "AZ">AZ</option>
+        <option value = "CA">CA</option>
+        <option value = "CO">CO</option>
+        <option value = "CT">CT</option>
+        <option value = "DE">DE</option>
+        <option value = "FL">FL</option>
+        <option value = "GA">GA</option>
+        <option value = "HI">HI</option>
+        <option value = "IA">IA</option>
+        <option value = "ID">ID</option>
+        <option value = "IL">IL</option>
+        <option value = "IN">IN</option>
+        <option value = "KS">KS</option>
+        <option value = "KY">KY</option>
+        <option value = "LA">LA</option>
+        <option value = "MA">MA</option>
+        <option value = "MD">MD</option>
+        <option value = "ME">ME</option>
+        <option value = "MI">MI</option>
+        <option value = "MN">MN</option>
+        <option value = "MO">MO</option>
+        <option value = "MS">MS</option>
+        <option value = "MT">MT</option>
+        <option value = "NC">NC</option>
+        <option value = "ND">ND</option>
+        <option value = "NE">NE</option>
+        <option value = "NH">NH</option>
+        <option value = "NJ">NJ</option>
+        <option value = "NM">NM</option>
+        <option value = "NV">NV</option>
+        <option value = "NY">NY</option>
+        <option value = "OH">OH</option>
+        <option value = "OK">OK</option>
+        <option value = "OR">OR</option>
+        <option value = "PA">PA</option>
+        <option value = "RI">RI</option>
+        <option value = "SC">SC</option>
+        <option value = "SD">SD</option>
+        <option value = "TN">TN</option>
+        <option value = "TX">TX</option>
+        <option value = "UT">UT</option>
+        <option value = "VA">VA</option>
+        <option value = "WA">WA</option>
+        <option value = "WI">WI</option>
+        <option value = "WV">WV</option>
+        <option value = "WY">WY</option>
+      </select> 
+ 
     </div>
 
     <div class="form-group text-white">
-        <label for="exampleFormControlSelect1">Activities</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>Hiking</option>
-            <option>Astronomy</option>
-            <option>Auto and ATV</option>
-            <option>Biking</option>
-            <option>Boating</option>
-            <option>Camping</option>
-            <option>Climbing</option>
-        </select>
+      <label for="activity-id">Activities</label>
+      <select class="form-control" id="activity-id">
+        <option value="FF8C027-7C8F-480B-A5F8-CD8CE490BFBA">Hiking</option>
+        <option value="13A57703-BB1A-41A2-94B8-53B692EB7238">Astronomy</option>
+        <option value="5F723BAD-7359-48FC-98FA-631592256E35">Auto and ATV</option>
+        <option value="7CE6E935-F839-4FEC-A63E-052B1DEF39D2">Biking</option>
+        <option value="071BA73C-1D3C-46D4-A53C-00D5602F7F0E">Boating</option>
+        <option value="A59947B7-3376-49B4-AD02-C0423E08C5F7">Camping</option>
+        <option value="B12FAAB9-713F-4B38-83E4-A273F5A43C77">Climbing</option>
+      </select>
     </div>
-        <button type="submit" type="button">Search</button>
-    </div>
+
+    <button type="submit" type="button">Search</button>
+
+  </form>
 
 </div>
 
-<section class="card-group" >
+{{!-- <section class="card-group">
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Park Rating</p>
-        </div>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text">Park Rating</p>
     </div>
+  </div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Park Rating</p>
-        </div>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text">Park Rating</p>
     </div>
+  </div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Park Rating</p>
-        </div>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text">Park Rating</p>
     </div>
+  </div>
 
-</section>
-
-<script src="./public/js/search.js"></script>
+</section> --}}
