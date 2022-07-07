@@ -18,7 +18,7 @@ Park.init(
         park_address: {
             type: DataTypes.STRING,
 
-            allowNull: false,
+            allowNull: false
         },
         park_contact: {
             type: DataTypes.STRING,
