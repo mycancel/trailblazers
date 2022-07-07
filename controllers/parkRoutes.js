@@ -2,7 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 
 // Returns data for specific park
-function getPark({ parkCode }) {
+function getPark(parkCode) {
   // TODO: Check if parkCode is being recieved from selectPark.js
   // console.log(parkCode);
 
@@ -54,9 +54,9 @@ function getPark({ parkCode }) {
 }
 
 // Route to view park information
-router.get("/", async (req, res) => {
+router.get("/:code", async (req, res) => {
   try {
-    const park = getPark(...req.body);
+    const park = getPark(req.params.code);
 
     // Serializes data
     const results = JSON.parse(JSON.stringify(park));
