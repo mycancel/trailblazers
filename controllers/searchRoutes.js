@@ -24,6 +24,26 @@ function getAllParks({ stateCode, activityId }) {
       let results = parks.filter((park) => {
         return park.states.includes(stateCode);
       });
+
+      // [
+      //   {
+      //     states: 'CT,GA,MA,MD,ME,NC,NH,NJ,NY,PA,TN,VA,VT,WV',
+      //     parkCode: 'appa',
+      //     designation: 'National Scenic Trail',
+      //     fullName: 'Appalachian National Scenic Trail',
+      //     url: 'https://www.nps.gov/appa/index.htm',
+      //     name: 'Appalachian'
+      //   },
+      //   {
+      //     states: 'MD,VA',
+      //     parkCode: 'asis',
+      //     designation: 'National Seashore',
+      //     fullName: 'Assateague Island National Seashore',
+      //     url: 'https://www.nps.gov/asis/index.htm',
+      //     name: 'Assateague Island'
+      //   }
+      // ]
+
       // returns new array with parks in specified state
       return results;
     })

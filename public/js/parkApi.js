@@ -1,11 +1,10 @@
 const axios = require("axios");
 
 // Returns search results of all parks according to state and activity
-function getAllParks(event) {
-  event.preventDefault();
+function getAllParks() {
 
   // TODO: add .value and .trim to query selections in variables below
-  const stateCode = "RI";
+  const stateCode = "MD";
   const activityId = "C11D3746-5063-4BD0-B245-7178D1AD866C";
 
   const requestOptions = {
@@ -26,11 +25,30 @@ function getAllParks(event) {
     // filters through parks returned by fetch request
     .then((response) => {
       const parks = response.data[0].parks;
-      let results = parks.filter((park) => {
+      const results = parks.filter((park) => {
         return park.states.includes(stateCode);
       });
-      // returns new array with parks in specified state
-      return results;
+
+      // [
+      //   {
+      //     states: 'CT,GA,MA,MD,ME,NC,NH,NJ,NY,PA,TN,VA,VT,WV',
+      //     parkCode: 'appa',
+      //     designation: 'National Scenic Trail',
+      //     fullName: 'Appalachian National Scenic Trail',
+      //     url: 'https://www.nps.gov/appa/index.htm',
+      //     name: 'Appalachian'
+      //   },
+      //   {
+      //     states: 'MD,VA',
+      //     parkCode: 'asis',
+      //     designation: 'National Seashore',
+      //     fullName: 'Assateague Island National Seashore',
+      //     url: 'https://www.nps.gov/asis/index.htm',
+      //     name: 'Assateague Island'
+      //   }
+      // ]
+
+      console.log(results);
     })
     .catch((error) => console.log("error", error));
 }
@@ -83,6 +101,4 @@ function showPark() {
     .catch((error) => console.log("error", error));
 }
 
-// TODO: add queryselectors
-// document.querySelector('').addEventListener('submit', getAllParks);
-// document.querySelector('').addEventListener('click', showPark);
+getAllParks();
