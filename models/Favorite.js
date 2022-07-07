@@ -2,49 +2,38 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Park extends Model {}
+class Favorite extends Model {}
 
-Park.init(
+Favorite.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+          },
+        value: {
+            type: DataTypes.BOOLEAN,
         },
-        park_name: {
+        park_code: {
             type: DataTypes.STRING,
-        },
-        park_address: {
-            type: DataTypes.STRING,
-
             allowNull: false,
-
         },
-        park_contact: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        park_description: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        park_id: {
+        Favorite_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "Review",
+                model: "user",
                 key: "id"
             }
         }
-    },
+    }, 
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'park',
+        modelName: 'favorite',
     }
 )
 
-
-module.exports = Park;
+module.exports = Favorite;
