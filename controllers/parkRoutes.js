@@ -27,6 +27,8 @@ function getPark(parkCode) {
       const address = data.addresses[0];
       const contact = data.contacts.phoneNumbers[0].phoneNumber;
       const description = data.description;
+      const hoursOfOp = data.operatingHours[0].standardHours;
+      const imgURL = data.images[0].url;
 
       // name = Catoctin Mountain Park
       // address = {
@@ -39,8 +41,19 @@ function getPark(parkCode) {
       //   line2: ''
       // }
       // contact = 3016639388
-      // description =President Franklin D. Roosevelt created programs to give people a chance to rebuild their lives from the Great Depression. The Works Progress Admin
+      // description = President Franklin D. Roosevelt created programs to give people a chance to rebuild their lives from the Great Depression. The Works Progress Admin
       // istration and the Civilian Conservation Corps gave this land a second opportunity and through re-growth, a new role as a recreation area.
+      // hoursOfOp ={
+      //   wednesday: 'Sunrise to Sunset',
+      //   monday: 'Sunrise to Sunset',
+      //   thursday: 'Sunrise to Sunset',
+      //   sunday: 'Sunrise to Sunset',
+      //   tuesday: 'Sunrise to Sunset',
+      //   friday: 'Sunrise to Sunset',
+      //   saturday: 'Sunrise to Sunset'
+      // }
+      // imgURL = https://www.nps.gov/common/uploads/structured_data/88247400-C3C0-D7DE-8C42EF37DF502F7F.jpg
+
 
       // returns park information
       return {
@@ -48,6 +61,8 @@ function getPark(parkCode) {
         address: address,
         contact: contact,
         description: description,
+        imgURL: imgURL,
+        hoursOfOp: hoursOfOp
       };
     })
     .catch((error) => console.log("error", error));
