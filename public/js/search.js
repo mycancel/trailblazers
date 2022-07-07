@@ -7,7 +7,7 @@ const formHandler = async (event) => {
   const stateCode = document.querySelector('#state-code').value;
   const activityId = document.querySelector('#activity-id').value;
 
-  const results = await getAllParks(stateCode, activityId)
+  const results = getAllParks(stateCode, activityId)
   console.log(results);
 
   // Send fetch request get search results
