@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require("express").Router();
 const axios = require("axios");
 
 // Returns search results of all parks according to state and activity
