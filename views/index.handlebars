@@ -81,9 +81,11 @@
 
 <section class="card bg-light mb-3" style="max-width: 18rem;">
     <div class="card-header">Search Results</div>
-    {{#each results as |park|}}
+    <div>
+    {{#each results}}
     {{> search-results}}
     {{/each}}
+    </div>
 </section>
 
 <script src="/js/search.js"></script>
