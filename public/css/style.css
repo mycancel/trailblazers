@@ -1,4 +1,41 @@
 .jumbotron{
-    background-image: url("../img/home_pic.png");
+    background-image: url("../img/nationalpark5.jpg");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 72px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:antiquewhite;
+}
+
+#trailblazers {
+    text-decoration: none;
+    color:blanchedalmond;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80px;
+    /* margin-left: 35%; */
+}
+
+#loggedindash {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 20px;
+}
+
+#logout {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 20px;
+}
+
+#loggedoutdash {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 20px;
+}
+
+#loginlink {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 20px;
 }
