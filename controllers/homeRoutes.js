@@ -21,10 +21,8 @@ router.post("/", async (req, res) => {
     const results = JSON.parse(JSON.stringify(...req.body));
 
     // Renders parks to homepage
-    res.render("index", {
-      results,
-      loggedIn: req.session.logged_in,
-    });
+    res.render("index", results);
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

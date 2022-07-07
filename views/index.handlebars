@@ -79,27 +79,9 @@
 
 </div>
 
-{{!-- <section class="card-group">
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="..." />
-    <div class="card-body">
-      <p class="card-text">Park Rating</p>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="..." />
-    <div class="card-body">
-      <p class="card-text">Park Rating</p>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="..." />
-    <div class="card-body">
-      <p class="card-text">Park Rating</p>
-    </div>
-  </div>
-
-</section> --}}
+<section class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Search Results</div>
+    {{#each results as |park|}}
+    {{> search-results}}
+    {{/each}}
+</section>
