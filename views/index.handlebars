@@ -7,9 +7,9 @@
     <div class="form-group text-white">
       <label for="state-code">State</label>
       <select class="form-control" id="state-code">
-        <option value = "AK">AL</option>
-        <option value = "AL">AR</option>
-        <option value = "AR">AK</option>
+        <option value = "AL">AL</option>
+        <option value = "AR">AR</option>
+        <option value = "AK">AK</option>
         <option value = "AZ">AZ</option>
         <option value = "CA">CA</option>
         <option value = "CO">CO</option>
@@ -63,7 +63,7 @@
     <div class="form-group text-white">
       <label for="activity-id">Activities</label>
       <select class="form-control" id="activity-id">
-        <option value="FF8C027-7C8F-480B-A5F8-CD8CE490BFBA">Hiking</option>
+        <option value="BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA">Hiking</option>
         <option value="13A57703-BB1A-41A2-94B8-53B692EB7238">Astronomy</option>
         <option value="5F723BAD-7359-48FC-98FA-631592256E35">Auto and ATV</option>
         <option value="7CE6E935-F839-4FEC-A63E-052B1DEF39D2">Biking</option>
@@ -81,9 +81,11 @@
 
 <section class="card bg-light mb-3" style="max-width: 18rem;">
     <div class="card-header">Search Results</div>
-    {{#each results as |park|}}
+    <div>
+    {{#each results}}
     {{> search-results}}
     {{/each}}
+    </div>
 </section>
 
 <script src="/js/search.js"></script>
