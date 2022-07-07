@@ -3,15 +3,15 @@ const { Favorite } = require("../models")
 const favoriteData = [
   {
     "value": "false",
-    "parkCode": "smitty"
+    "park_code": "smitty"
   },
   {
     "value": "true",
-    "parkCode": "asis"
+    "park_code": "asis"
   },
   {
     "value": "false",
-    "parkCode": "traugh"
+    "park_code": "traugh"
   }
 ];
 const seedFavorite = () => Favorite.bulkCreate(favoriteData)
