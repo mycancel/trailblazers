@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const axios = require("axios");
+require('dotenv').config();
 
 // Returns search results of all parks according to state and activity
 function getAllParks({ stateCode, activityId }) {
@@ -15,7 +16,7 @@ function getAllParks({ stateCode, activityId }) {
 
   axios
     .get(
-      `https://developer.nps.gov/api/v1/activities/parks?id=${activityId}&api_key=NkH26hNE8uCOcIC7vkfHHuLqFaIv9UUy6uuQJGqC`,
+      `https://developer.nps.gov/api/v1/activities/parks?id=${activityId}&api_key=${process.env.API}`,
       requestOptions
     )
     // retrieves data property from axios response
