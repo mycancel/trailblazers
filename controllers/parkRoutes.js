@@ -42,6 +42,7 @@ router.get("/:code", async (req, res) => {
           description: description,
           imgURL: imgURL,
           hoursOfOp: hoursOfOp,
+          loggedIn: req.session.logged_in
         };
       })
       .catch((error) => console.log("error", error));
