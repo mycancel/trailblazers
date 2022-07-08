@@ -1,6 +1,6 @@
 <article>
   <h4 class="text-white">{{name}}</h4>
-  {{#if logged_in}}
+  {{#if loggedIn}}
   <input type="checkbox" id="favorite-check" name="favorite-check"/>
   <label for="favorite-check"> Favorite </label>
   {{/if}}
@@ -48,7 +48,7 @@
   </div>
 </div>
 
-{{#if logged_in}}
+{{#if loggedIn}}
 <script src="/js/favorite.js"></script>
 {{/if}}
 
