@@ -20,7 +20,7 @@ Users will be able to search for specific parks without registration or login, b
 
 ## VISUALS
 
-![]()
+![PNG](./public/img/screenshot.PNG)
 
 ## AUTHORS AND ACKNOWLEDGMENTS
 Mary Cancellieri
