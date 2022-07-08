@@ -45,33 +45,80 @@
     font-size: 20px;
 }
 
+.container {
+    margin-bottom: 5rem;
+    border-radius: 5%;
+}
+
 .card-text {
-    color: black;
+    /* color: black; */
     font-weight: 700;
 }
 
+#park-image {
+    /* background-size: cover; */
+    viewport-fit: auto;
+    margin: 2rem;
+    justify-content: center;
+    border-radius: 2%;
+}
+
+#info-card {
+viewport-fit: auto;
+    position: relative;
+    top: 0%;
+    left: 9%;
+    justify-content: center;
+    /* align-items: center; */
+    color: black;
+    overflow: hidden;
+}
+
+#info-card p {
+    font-size: larger;
+}
+
 #parkpageinfo {
-    background-color: rgba(0, 255, 85, 0.3);
+    /* position: absolute; */
+    background-color: rgba(8, 8, 8, 0.5);
     margin-top: 40px;
     text-align: center;
+    border-radius: 15%;
 }
+
+
 
 ul {
     list-style-type: none;
+}
+
+html {
+    color: black;
+    background-image: none !important;
+    background: #1f1f1f !important;
 }
 
 @media only screen and (min-width: 390px) {
     #h1 {
       text-size-adjust: auto;
     }
+    #info-card {
+        text-size-adjust: auto;
+    }
   }
   @media only screen and (min-width: 412px) {
     #jumbosearch {
       text-size-adjust: auto;
     }
+    #info-card {
+        text-size-adjust: auto;
+    }
   }
   @media only screen and (max-width: 768px) {
     #parkpageinfo {
-        text-size-adjust: auto;
+        left: 0%;
+    }
+    #info-card {
+        left: 0%;
     }
   }
