@@ -1,46 +1,58 @@
-<h4 class="text-white">{{name}}</h4>
+<article>
+  <h4 class="text-white">{{name}}</h4>
+  {{#if logged_in}}
+  <input type="checkbox" id="favorite-check" name="favorite-check"/>
+  <label for="favorite-check"> Favorite </label>
+  {{/if}}
+</article>
 
 <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-        <div class="col-md-4">
-            <img src="{{imgURL}}" alt="{{name}}">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">{{name}}</h5>
-                <h5>Address:</h5>
-                <p id="parkAddress" class="card-text">
-                  {{address.line1}}, {{address.city}}, {{address.stateCode}}, {{address.postalCode}}
-                </p>
-
-                <h5>Contact:</h5>
-                <p id="parkContact" class="card-text">
-                  {{contact}}
-                </p>
-
-                <h5>Description:</h5>
-                <p id="parkDescription" class="card-text">
-                  {{description}}
-                </p>
-
-                <h5>Hours of Operation:</h5>
-                <ul id="parkHours" class="card-text">
-                  <li>Monday: {{hoursOfOp.monday}}</li>
-                  <li>Tuesday: {{hoursOfOp.tuesday}}</li>
-                  <li>Wednesday: {{hoursOfOp.wednesday}}</li>
-                  <li>Thursday: {{hoursOfOp.thursday}}</li>
-                  <li>Friday: {{hoursOfOp.friday}}</li>
-                  <li>Saturday: {{hoursOfOp.saturday}}</li>
-                  <li>Sunday: {{hoursOfOp.sunday}}</li>
-                </ul>
-
-            </div>
-        </div>
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{imgURL}}" alt="{{name}}" />
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <h5>Address:</h5>
+        <p id="parkAddress" class="card-text">
+          {{address.line1}},
+          {{address.city}},
+          {{address.stateCode}},
+          {{address.postalCode}}
+        </p>
+
+        <h5>Contact:</h5>
+        <p id="parkContact" class="card-text">
+          {{contact}}
+        </p>
+
+        <h5>Description:</h5>
+        <p id="parkDescription" class="card-text">
+          {{description}}
+        </p>
+
+        <h5>Hours of Operation:</h5>
+        <ul id="parkHours" class="card-text">
+          <li>Monday: {{hoursOfOp.monday}}</li>
+          <li>Tuesday: {{hoursOfOp.tuesday}}</li>
+          <li>Wednesday: {{hoursOfOp.wednesday}}</li>
+          <li>Thursday: {{hoursOfOp.thursday}}</li>
+          <li>Friday: {{hoursOfOp.friday}}</li>
+          <li>Saturday: {{hoursOfOp.saturday}}</li>
+          <li>Sunday: {{hoursOfOp.sunday}}</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
 </div>
 
+{{#if logged_in}}
+<script src="/js/favorite.js"></script>
+{{/if}}
 
-{{!-- {
+{{! {
   name: 'Catoctin Mountain Park',
   address: {
     postalCode: '21788',
@@ -63,4 +75,4 @@
     friday: 'Sunrise to Sunset',
     saturday: 'Sunrise to Sunset'
   }
-} --}}
+} }}
