@@ -65,7 +65,7 @@ const activities = [
 ]
 
 router.get("/", (req, res) => {
-  res.render("index", { states, activities });
+  res.render("index", { states, activities, loggedIn: req.session.logged_in });
 });
 
 router.get("/login", (req, res) => {
@@ -110,7 +110,8 @@ router.get("/search-results", async (req, res) => {
       stateCode, 
       activityId, 
       states: selectedStates, 
-      activities: selectedActivities 
+      activities: selectedActivities,
+      loggedIn: req.session.logged_in 
     });
 
   } catch (err) {
