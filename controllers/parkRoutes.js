@@ -7,7 +7,7 @@ router.get("/:code", async (req, res) => {
   try {
     // TODO: Check if parkCode is being recieved from selectPark.js
     const parkCode = req.body.params;
-    // console.log(parkCode);
+    console.log(parkCode);
 
     const requestOptions = {
       method: "GET",
@@ -29,6 +29,8 @@ router.get("/:code", async (req, res) => {
       .then((response) => response.data)
       .then((response) => {
         const data = response.data[0];
+        console.log (data); 
+
         const name = data.fullName;
         const address = data.addresses[0];
         const contact = data.contacts.phoneNumbers[0].phoneNumber;
