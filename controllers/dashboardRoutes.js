@@ -5,17 +5,23 @@ require("dotenv").config();
 
 router.get('/', async (req, res) => {
   try {
-    const parkCode = await Favorite.findAll({
-      attributes: {
-        include: ['park_code']
-      },
+    const favParks = await Favorite.findAll({
+      attributes: ['park_code'],
       where: {
         user_id: req.session.user_id,
       },
     });
 
+    const parkCode = JSON.parse(JSON.stringify(favParks));
+    
+    // TODO: Un-negate this to work on this portion of the application
     if (!parkCode) {
-      // TODO: map each park of parkCode
+      let parkString = '';
+      parkCode.forEach((o) => {
+        parkString = parkString + `${Object.values(o)},`;
+      });
+      
+      // TODO: recieve data for parkString of parkCode
       const requestOptions = {
         method: "GET",
         headers: {
@@ -24,24 +30,24 @@ router.get('/', async (req, res) => {
       };
   
       // retrieves parks from National Parks Services API
-      const { data: { data } } = await axios
+      const data = axios
         .get(
-          "https://developer.nps.gov/api/v1/parks?id=" +
-            parkCode +
+          "https://developer.nps.gov/api/v1/parks?parkCode=" +
+            parkString +
             "&api_key=" +
             process.env.API,
           requestOptions
-        )
-      // retrieves data property from axios response
-      const parks = data
+        );
 
-      res.render('dashboard', {
-        parks,
-        loggedIn: req.session.logged_in,
-      });
+      console.log(data);
+
+      // res.render('dashboard', {
+      //   parks,
+      //   loggedIn: req.session.logged_in,
+      // });
 
     } else {
-      const message = 'No parks favorited.'
+      const message = { message: 'No parks favorited.' };
       res.render('dashboard', {
         message,
         loggedIn: req.session.logged_in,
