@@ -80,19 +80,22 @@
 </div>
 
 <section class="mb-3 text-light">
-    <h2 class="card-header">Search Results</h2>
-    <div>
-      <div class="card" style="width: 18rem;">
-        <a href="/park/cato" >Nature Trail 1</a>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <a href="/park/romo" >Nature Trail 2</a>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <a href="/park/tuzi" >Nature Trail 3</a>
-      </div>
+    <h2 class="card-header text-center mt-4">Search Results</h2>
+    <div class="d-flex m-3 flex-wrap justify-content-center">
+      <button class="card m-3 p-2 align-items-center" style="width: 18rem;">
+        <a href="/park/cato" class="nav-link font-weight-bold" >Nature Trail 1</a>
+      </button>
+      <button class="card m-3 p-2 align-items-center" style="width: 18rem;">
+        <a href="/park/romo" class="nav-link font-weight-bold">Nature Trail 2</a>
+      </button>
+      <button class="card m-3 p-2 align-items-center" style="width: 18rem;">
+        <a href="/park/tuzi" class="nav-link font-weight-bold">Nature Trail 3</a>
+      </button>
+      <button class="card m-3 p-2 align-items-center" style="width: 18rem;">
+        <a href="/park/tuzi" class="nav-link font-weight-bold">Nature Trail 4</a>
+      </button>
     {{#each results}}
-    <p>TEST</p>
+    <p>Do you see this?</p>
     {{> search-results}}
     {{/each}}
     </div>

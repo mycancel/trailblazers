@@ -46,7 +46,7 @@ router.get("/search", async (req, res) => {
         });
 
         // returns new array with parks in specified state
-        return results;
+        return { results: results };
       })
       .catch((error) => console.log("error", error));
 
@@ -55,7 +55,7 @@ router.get("/search", async (req, res) => {
 
     console.log(results);
     // Renders parks to homepage
-    return res.render("index", { results: results });
+    return res.render("index", results);
 
   } catch (err) {
     console.log(err);

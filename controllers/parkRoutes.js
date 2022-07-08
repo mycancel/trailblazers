@@ -5,9 +5,7 @@ require("dotenv").config();
 // Route to view park information
 router.get("/:code", async (req, res) => {
   try {
-    // TODO: Check if parkCode is being recieved from selectPark.js
-    const parkCode = req.body.params;
-    console.log(parkCode);
+    const parkCode = req.params.code;
 
     const requestOptions = {
       method: "GET",
@@ -29,8 +27,6 @@ router.get("/:code", async (req, res) => {
       .then((response) => response.data)
       .then((response) => {
         const data = response.data[0];
-        console.log (data); 
-
         const name = data.fullName;
         const address = data.addresses[0];
         const contact = data.contacts.phoneNumbers[0].phoneNumber;
@@ -54,7 +50,7 @@ router.get("/:code", async (req, res) => {
     const results = JSON.parse(JSON.stringify(park));
 
     // Renders parks to parkpage
-    res.render("parkpage", { results });
+    res.render("parkpage", results);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
