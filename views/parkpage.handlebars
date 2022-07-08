@@ -1,47 +1,44 @@
+<h4>{{name}}</h4>
+
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
         <div class="col-md-4">
-            <img src="..." alt="...">
+            <img src="{{imgURL}}" alt="{{name}}">
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">{{parkName}}</h5>
-                <h5>Address</h5>
+                <h5 class="card-title">{{name}}</h5>
+                <h5>Address:</h5>
                 <p id="parkAddress" class="card-text">
+                  {{address.line1}}, {{address.city}}, {{address.stateCode}}, {{address.postalCode}}
                 </p>
 
-                <h5>Contact</h5>
+                <h5>Contact:</h5>
                 <p id="parkContact" class="card-text">
+                  {{contact}}
                 </p>
 
-                <h5>Description</h5>
+                <h5>Description:</h5>
                 <p id="parkDescription" class="card-text">
+                  {{description}}
                 </p>
 
-                <h5>Hours of Operation</h5>
-                <p id="parkHours" class="card-text">
-                </p>
+                <h5>Hours of Operation:</h5>
+                <ul id="parkHours" class="card-text">
+                  <li>Monday: {{hoursOfOp.monday}}</li>
+                  <li>Tuesday: {{hoursOfOp.tuesday}}</li>
+                  <li>Wednesday: {{hoursOfOp.wednesday}}</li>
+                  <li>Thursday: {{hoursOfOp.thursday}}</li>
+                  <li>Friday: {{hoursOfOp.friday}}</li>
+                  <li>Saturday: {{hoursOfOp.saturday}}</li>
+                  <li>Sunday: {{hoursOfOp.sunday}}</li>
+                </ul>
 
             </div>
         </div>
     </div>
 </div>
 
-<div><h4>Reviews</h4></div>
-
-{{!-- add for each for reviews --}}
-
-{{!-- <div class="card">
-  <div class="card-header">
-    Rating: 
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      {{!-- <p>This is where the review will go.</p> --}}
-      <footer class="blockquote-footer">Reviewed By: <cite title="Source Title">Somebody</cite></footer>
-    </blockquote>
-  </div>
-</div> --}}
 
 {{!-- // name = Catoctin Mountain Park
       // address = {
