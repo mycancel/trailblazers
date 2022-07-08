@@ -1,7 +1,9 @@
 <article>
   <h4 class="text-white">{{name}}</h4>
+  {{#if logged_in}}
   <input type="checkbox" id="favorite-check" name="favorite-check"/>
   <label for="favorite-check"> Favorite </label>
+  {{/if}}
 </article>
 
 <div class="card mb-3" style="max-width: 540px;">
@@ -46,7 +48,9 @@
   </div>
 </div>
 
+{{#if logged_in}}
 <script src="/js/favorite.js"></script>
+{{/if}}
 
 {{! {
   name: 'Catoctin Mountain Park',
