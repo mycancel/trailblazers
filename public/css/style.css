@@ -1,19 +1,24 @@
-.jumbotron{
+.jumbotron {
     background-image: url("../img/nationalpark5.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-size: 72px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: antiquewhite;
+}
+
+#h1 {
+    text-align: center;
 }
 
 #trailblazers {
     text-decoration: none;
-    color:blanchedalmond;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 80px;
-    /* margin-left: 35%; */
+    color: blanchedalmond;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5rem;
+    position: relative;
+    top: 5%;
 }
 
 #loggedindash {
@@ -39,3 +44,14 @@
     color: burlywood;
     font-size: 20px;
 }
+
+@media only screen and (min-width: 390px) {
+    #h1 {
+      text-size-adjust: auto;
+    }
+  }
+  @media only screen and (min-width: 412px) {
+    #jumbosearch {
+      text-size-adjust: auto;
+    }
+  }
