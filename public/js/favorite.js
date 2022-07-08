@@ -1,12 +1,8 @@
-const favCheckBox = async () => {
-  // TODO: Check if this.checked returns a boolean value
-  // console.log(this.checked);
-  if (this.checked) {
+const favCheckBox = async (event) => {
+  if (event.target.checked) {
     // pathname = '/park/:code'
     const pathname = window.location.pathname;
     const parkCode = pathname.slice(6);
-    // TODO: Check if parkCode is correct
-    // console.log(parkCode)
 
     const response = await fetch("/api/favorites", {
       method: "POST",
@@ -25,8 +21,6 @@ const favCheckBox = async () => {
     // pathname = '/park/:code'
     const pathname = window.location.pathname;
     const parkCode = pathname.slice(6);
-    // TODO: Check if parkCode is correct
-    // console.log(parkCode)
 
     const response = await fetch("/api/favorites", {
       method: "DELETE",
@@ -44,5 +38,4 @@ const favCheckBox = async () => {
   }
 };
 
-// TODO: queryselect input type=checkbox
-// document.querySelector('').addEventListener('change', favCheckBox)
+document.querySelector('#favorite-check').addEventListener('change', favCheckBox)
