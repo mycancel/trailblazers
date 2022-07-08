@@ -1,19 +1,19 @@
-<article>
-  <h4 class="text-white">{{name}}</h4>
-  {{#if loggedIn}}
-  <input type="checkbox" id="favorite-check" name="favorite-check"/>
-  <label for="favorite-check"> Favorite </label>
-  {{/if}}
-</article>
 
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3" style="max-width: 75%;">
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{{imgURL}}" alt="{{name}}" />
-    </div>
+<div class="col-md-4">
+  <img src="{{imgURL}}" alt="{{name}}"/>
+</div>
     <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
+      <div class="card-body" id="parkpageinfo">
+        <article>
+          <h2 class="text-dark p-3" style="font-weight: bold;">{{name}}</h2>
+          {{#if logged_in}}
+          <input type="checkbox" id="favorite-check" name="favorite-check" />
+          <label for="favorite-check"> Favorite </label>
+          {{/if}}
+        </article>
+        {{!-- <h5 class="card-title">{{name}}</h5> --}}
         <h5>Address:</h5>
         <p id="parkAddress" class="card-text">
           {{address.line1}},
@@ -33,7 +33,7 @@
         </p>
 
         <h5>Hours of Operation:</h5>
-        <ul id="parkHours" class="card-text">
+        <ul id="parkHours" class="card-text mr-4">
           <li>Monday: {{hoursOfOp.monday}}</li>
           <li>Tuesday: {{hoursOfOp.tuesday}}</li>
           <li>Wednesday: {{hoursOfOp.wednesday}}</li>
@@ -53,26 +53,28 @@
 {{/if}}
 
 {{! {
-  name: 'Catoctin Mountain Park',
-  address: {
-    postalCode: '21788',
-    city: 'Thurmont',
-    stateCode: 'MD',
-    line1: '14707 Park Central Road',
-    type: 'Physical',
-    line3: '',
-    line2: ''
-  },
-  contact: '3016639388',
-  description: 'President Franklin D. Roosevelt created programs to give people a chance to rebuild their lives from the Great Depression. The Works Progress Administration and the Civilian Conservation Corps gave this land a second opportunity and through re-growth, a new role as a recreation area.',
-  imgURL: 'https://www.nps.gov/common/uploads/structured_data/88247400-C3C0-D7DE-8C42EF37DF502F7F.jpg',
-  hoursOfOp: {
-    wednesday: 'Sunrise to Sunset',
-    monday: 'Sunrise to Sunset',
-    thursday: 'Sunrise to Sunset',
-    sunday: 'Sunrise to Sunset',
-    tuesday: 'Sunrise to Sunset',
-    friday: 'Sunrise to Sunset',
-    saturday: 'Sunrise to Sunset'
-  }
+name: 'Catoctin Mountain Park',
+address: {
+postalCode: '21788',
+city: 'Thurmont',
+stateCode: 'MD',
+line1: '14707 Park Central Road',
+type: 'Physical',
+line3: '',
+line2: ''
+},
+contact: '3016639388',
+description: 'President Franklin D. Roosevelt created programs to give people a chance to rebuild their lives from the
+Great Depression. The Works Progress Administration and the Civilian Conservation Corps gave this land a second
+opportunity and through re-growth, a new role as a recreation area.',
+imgURL: 'https://www.nps.gov/common/uploads/structured_data/88247400-C3C0-D7DE-8C42EF37DF502F7F.jpg',
+hoursOfOp: {
+wednesday: 'Sunrise to Sunset',
+monday: 'Sunrise to Sunset',
+thursday: 'Sunrise to Sunset',
+sunday: 'Sunrise to Sunset',
+tuesday: 'Sunrise to Sunset',
+friday: 'Sunrise to Sunset',
+saturday: 'Sunrise to Sunset'
+}
 } }}

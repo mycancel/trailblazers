@@ -46,8 +46,18 @@
 }
 
 .card-text {
-    color: white;
-    text-shadow: 2px 2px black;
+    color: black;
+    font-weight: 700;
+}
+
+#parkpageinfo {
+    background-color: rgba(0, 255, 85, 0.3);
+    margin-top: 40px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
 }
 
 @media only screen and (min-width: 390px) {
@@ -58,5 +68,10 @@
   @media only screen and (min-width: 412px) {
     #jumbosearch {
       text-size-adjust: auto;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    #parkpageinfo {
+        text-size-adjust: auto;
     }
   }
