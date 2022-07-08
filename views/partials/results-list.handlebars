@@ -1,6 +1,13 @@
-<button class="card m-3 p-2 align-items-center" style="width: 18rem;">
-  <a href="/park/{{parkCode}}" class="nav-link font-weight-bold">{{fullName}}</a>
-</button>
+<section class="mb-3 text-light">
+    <h2 class="card-header text-center mt-4">Search Results</h2>
+    <div class="d-flex m-3 flex-wrap justify-content-center">
+      {{#each parks}}
+      <button class="card m-3 p-2 align-items-center" style="width: 18rem;">
+        <a href="/park/{{parkCode}}" class="nav-link font-weight-bold">{{fullName}}</a>
+      </button>
+      {{/each}}
+    </div>
+</section>
 
 
 {{! {results: [

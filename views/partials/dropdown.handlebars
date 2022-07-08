@@ -1,0 +1,10 @@
+<select class="form-control" id={{id}} name={{id}}>
+    {{#each items}}
+        <option 
+            {{#if value}}value={{value}}{{/if}}
+            {{#if selected}}selected{{/if}}
+        >
+            {{name}}
+        </option>
+    {{/each}}
+</select>
