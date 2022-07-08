@@ -55,7 +55,7 @@ router.get("/search", async (req, res) => {
 
     console.log(results);
     // Renders parks to homepage
-    res.render("index", { results: results });
+    return res.render("index", { results: results });
 
   } catch (err) {
     console.log(err);

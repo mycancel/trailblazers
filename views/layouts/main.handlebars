@@ -22,19 +22,19 @@
 
       {{#if logged_in}}
       <li class="nav-item">
-        <a class="nav-link active" href="/dashboard" id="loggedindash">Dashboard</a>
+        <a class="nav-link" href="/dashboard" id="loggedindash">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="button" id="logout">Logout</a>
+        <a class="nav-link button" href="/logout" id="logout">Logout</a>
       </li>
-      {{/if}}
-
+      {{else}}
       <li class="nav-item">
         <a class="nav-link" href="/dashboard" id="loggedoutdash">Dashboard</a>
       </li>
       <li class="nav-item">
         <a href="/login" class="nav-link" id="loginlink">Login</a>
       </li>
+      {{/if}}
 
     </ul>
   </div>
