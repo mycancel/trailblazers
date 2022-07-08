@@ -51,7 +51,7 @@ router.get("/:code", async (req, res) => {
     // Serializes data
     const results = JSON.parse(JSON.stringify(park));
 
-    // Renders parks to homepage
+    // Renders parks to parkpage
     res.render("parkpage", { results });
   } catch (err) {
     console.log(err);
