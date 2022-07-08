@@ -53,8 +53,10 @@ router.get("/search", async (req, res) => {
     // Serializes data
     const results = JSON.parse(JSON.stringify(parks));
 
+    console.log(results);
     // Renders parks to homepage
-    res.render("index", results);
+    res.render("index", { results: results });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

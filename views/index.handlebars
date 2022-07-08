@@ -79,13 +79,15 @@
 
 </div>
 
+{{#if results}}
 <section class="card bg-light mb-3" style="max-width: 18rem;">
-    <div class="card-header">Search Results</div>
+    <h2 class="card-header">Search Results</h2>
     <div>
     {{#each results}}
     {{> search-results}}
     {{/each}}
     </div>
 </section>
+{{/if}}
 
 <script src="/js/search.js"></script>
