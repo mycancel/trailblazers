@@ -6,10 +6,9 @@
       <div class="card-body" id="parkpageinfo">
         <article>
           <h2 class="p-3" style="font-weight: bold;">{{name}}</h2>
-          {{!-- {{#if logged_in}} --}}
-          <input type="checkbox" id="favorite-check" name="favorite-check" />
-          <label for="favorite-check"> Favorite </label>
-          {{!-- {{/if}} --}}
+          {{#if loggedIn}}
+          <button type="button" id="favorite-check" value="{{name}}"/>Favorite</button>
+          {{/if}}
         </article>
         {{!-- <h5 class="card-title">{{name}}</h5> --}}
         <h5>Address:</h5>

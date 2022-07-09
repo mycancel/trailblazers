@@ -1,47 +1,26 @@
 const router = require('express').Router();
 const { Favorite } = require('../models');
-const axios = require("axios");
-require("dotenv").config();
 
 router.get('/', async (req, res) => {
   try {
-    const parkCode = await Favorite.findAll({
-      attributes: {
-        include: ['park_code']
-      },
+    const favParks = await Favorite.findAll({
+      attributes: ['park_code', 'name'],
       where: {
         user_id: req.session.user_id,
       },
     });
 
-    if (!parkCode) {
-      // TODO: map each park of parkCode
-      const requestOptions = {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-  
-      // retrieves parks from National Parks Services API
-      const { data: { data } } = await axios
-        .get(
-          "https://developer.nps.gov/api/v1/parks?id=" +
-            parkCode +
-            "&api_key=" +
-            process.env.API,
-          requestOptions
-        )
-      // retrieves data property from axios response
-      const parks = data
-
+    // Serializes favParks
+    const parkData = JSON.parse(JSON.stringify(favParks));
+    
+    if (parkData) {
       res.render('dashboard', {
-        parks,
+        parkData: parkData,
         loggedIn: req.session.logged_in,
       });
 
     } else {
-      const message = 'No parks favorited.'
+      const message = { message: 'No parks favorited.' };
       res.render('dashboard', {
         message,
         loggedIn: req.session.logged_in,
