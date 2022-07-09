@@ -8,12 +8,12 @@
       </div>
     {{else}}
       <div class="card-body d-flex justify-content-center">
-        {{#each parks}}
+        {{#each parkData as |park|}}
           <button class="card m-3 p-2 align-items-center" style="width: 18rem;">
             <a
-              href="/park/{{parkCode}}"
+              href="/park/{{park_code}}"
               class="nav-link font-weight-bold"
-            >{{fullName}}</a>
+            >{{name}}</a>
           </button>
         {{/each}}
       </div>
@@ -21,3 +21,9 @@
 
   </div>
 </section>
+
+{{!-- parkData: [
+  { park_code: 'hobe', name: 'Horseshoe Bend National Military Park' },
+  { park_code: 'lecl', name: 'Lewis & Clark National Historic Trail' },
+  { park_code: 'glac', name: 'Glacier National Park' }
+] --}}

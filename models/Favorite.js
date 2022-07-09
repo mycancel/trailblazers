@@ -12,6 +12,10 @@ Favorite.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     park_code: {
       type: DataTypes.STRING,
       allowNull: false,
