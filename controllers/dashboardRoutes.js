@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const { Favorite } = require('../models');
-const axios = require("axios");
-require("dotenv").config();
 
 router.get('/', async (req, res) => {
   try {
