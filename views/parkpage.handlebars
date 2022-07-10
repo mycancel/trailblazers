@@ -1,77 +1,52 @@
+<div class="container card mb-3" id="park-container">
 
-<div class="container card mb-3" style="max-width: 95%;">
-  <img id="park-image" src="{{imgURL}}" alt="{{name}}"/>
-  
-    <div class="col-md-10" id="info-card">
-      <div class="card-body" id="parkpageinfo">
-        <article>
-          <h2 class="p-3" style="font-weight: bold;">{{name}}</h2>
-          {{#if loggedIn}}
-          <button type="button" id="favorite-check" value="{{name}}"/>Favorite</button>
-          {{/if}}
-        </article>
-        {{!-- <h5 class="card-title">{{name}}</h5> --}}
-        <h5>Address:</h5>
-        <p id="parkAddress" class="card-text">
-          {{address.line1}},
-          {{address.city}},
-          {{address.stateCode}},
-          {{address.postalCode}}
-        </p>
-
-        <h5>Contact:</h5>
-        <p id="parkContact" class="card-text">
-          {{contact}}
-        </p>
-
-        <h5>Description:</h5>
-        <p id="parkDescription" class="card-text">
-          {{description}}
-        </p>
-
-        <h5>Hours of Operation:</h5>
-        <ul id="parkHours" class="card-text mr-4">
-          <li>Monday: {{hoursOfOp.monday}}</li>
-          <li>Tuesday: {{hoursOfOp.tuesday}}</li>
-          <li>Wednesday: {{hoursOfOp.wednesday}}</li>
-          <li>Thursday: {{hoursOfOp.thursday}}</li>
-          <li>Friday: {{hoursOfOp.friday}}</li>
-          <li>Saturday: {{hoursOfOp.saturday}}</li>
-          <li>Sunday: {{hoursOfOp.sunday}}</li>
-        </ul>
-
-      </div>
-    </div>
+  <div id="image-div">
+    <img src="{{imgURL}}" alt="{{name}}" id="park-image">
   </div>
+
+  <div class="col-md-10 card-body" id="info-card">
+
+    <h2 class="p-3" style="font-weight: bold;">{{name}}</h2>
+
+    {{#if loggedIn}}
+    <button type="button" id="favorite-check" value="{{name}}" class="btn btn-outline-success p-1 mb-2">Favorite</button>
+    {{/if}}
+
+    <h5>Address:</h5>
+
+    <p id="parkAddress" class="card-text">
+      {{address.line1}},
+      {{address.city}},
+      {{address.stateCode}},
+      {{address.postalCode}}
+    </p>
+
+    <h5>Contact:</h5>
+
+    <p id="parkContact" class="card-text">
+      {{contact}}
+    </p>
+
+    <h5>Description:</h5>
+
+    <p id="parkDescription" class="card-text">
+      {{description}}
+    </p>
+
+    <h5>Hours of Operation:</h5>
+
+    <ul id="parkHours" class="card-text mr-4">
+      <li>Monday: {{hoursOfOp.monday}}</li>
+      <li>Tuesday: {{hoursOfOp.tuesday}}</li>
+      <li>Wednesday: {{hoursOfOp.wednesday}}</li>
+      <li>Thursday: {{hoursOfOp.thursday}}</li>
+      <li>Friday: {{hoursOfOp.friday}}</li>
+      <li>Saturday: {{hoursOfOp.saturday}}</li>
+      <li>Sunday: {{hoursOfOp.sunday}}</li>
+    </ul>
+
+
+
+  </div>
+
 </div>
-
-{{#if loggedIn}}
-<script src="/js/favorite.js"></script>
-{{/if}}
-
-{{! {
-name: 'Catoctin Mountain Park',
-address: {
-postalCode: '21788',
-city: 'Thurmont',
-stateCode: 'MD',
-line1: '14707 Park Central Road',
-type: 'Physical',
-line3: '',
-line2: ''
-},
-contact: '3016639388',
-description: 'President Franklin D. Roosevelt created programs to give people a chance to rebuild their lives from the
-Great Depression. The Works Progress Administration and the Civilian Conservation Corps gave this land a second
-opportunity and through re-growth, a new role as a recreation area.',
-imgURL: 'https://www.nps.gov/common/uploads/structured_data/88247400-C3C0-D7DE-8C42EF37DF502F7F.jpg',
-hoursOfOp: {
-wednesday: 'Sunrise to Sunset',
-monday: 'Sunrise to Sunset',
-thursday: 'Sunrise to Sunset',
-sunday: 'Sunrise to Sunset',
-tuesday: 'Sunrise to Sunset',
-friday: 'Sunrise to Sunset',
-saturday: 'Sunrise to Sunset'
-}
-} }}
