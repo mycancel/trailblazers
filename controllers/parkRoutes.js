@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { Favorite } = require('../models');
 const axios = require("axios");
 require("dotenv").config();
 
@@ -6,6 +7,25 @@ require("dotenv").config();
 router.get("/:code", async (req, res) => {
   try {
     const parkCode = req.params.code;
+
+    let checkFavorite;
+    // If user is logged in
+    if (req.session.logged_in) {
+      // Gets all favorite parks from user
+      const favParks = await Favorite.findAll({
+        attributes: ['park_code'],
+        where: {
+          user_id: req.session.user_id,
+        },
+      });
+  
+      // Serializes data
+      const serialFavParks = JSON.parse(JSON.stringify(favParks));
+      // Checks if the selected park is already favorited
+      checkFavorite = serialFavParks.some((park) => park.park_code === parkCode);
+    } else {
+      checkFavorite = false;
+    }
 
     const requestOptions = {
       method: "GET",
@@ -15,43 +35,40 @@ router.get("/:code", async (req, res) => {
       redirect: "follow",
     };
 
-    const park = await axios
-      .get(
-        "https://developer.nps.gov/api/v1/parks?parkCode=" +
-          parkCode +
-          "&api_key=" +
-          process.env.API,
-        requestOptions
-      )
-      // retrieves data property from axios response
-      .then((response) => response.data)
-      .then((response) => {
-        const data = response.data[0];
-        const name = data.fullName;
-        const address = data.addresses[0];
-        const contact = data.contacts.phoneNumbers[0].phoneNumber;
-        const description = data.description;
-        const hoursOfOp = data.operatingHours[0].standardHours;
-        const imgURL = data.images[0].url;
+    // Gets park information from National Park Service API
+    const { data: { data } } = await axios.get(
+      "https://developer.nps.gov/api/v1/parks?parkCode=" +
+        parkCode +
+        "&api_key=" +
+        process.env.API,
+      requestOptions
+    );
 
-        // returns park information
-        return {
-          name: name,
-          address: address,
-          contact: contact,
-          description: description,
-          imgURL: imgURL,
-          hoursOfOp: hoursOfOp,
-          loggedIn: req.session.logged_in
-        };
-      })
-      .catch((error) => console.log("error", error));
+    const name = data[0].fullName;
+    const address = data[0].addresses[0];
+    const contact = data[0].contacts.phoneNumbers[0].phoneNumber;
+    const description = data[0].description;
+    const hoursOfOp = data[0].operatingHours[0].standardHours;
+    const imgURL = data[0].images[0].url;
 
+    // returns park information
+    const park = {
+      name: name,
+      address: address,
+      contact: contact,
+      description: description,
+      imgURL: imgURL,
+      hoursOfOp: hoursOfOp,
+      loggedIn: req.session.logged_in,
+      checkFavorite: checkFavorite
+    };
     // Serializes data
-    const results = JSON.parse(JSON.stringify(park));
+    const parkInfo = JSON.parse(JSON.stringify(park));
+
+    console.log(checkFavorite);
 
     // Renders parks to parkpage
-    res.render("parkpage", results);
+    res.render("parkpage", parkInfo);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
