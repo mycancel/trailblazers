@@ -62,6 +62,7 @@ const activities = [
   { value: '071BA73C-1D3C-46D4-A53C-00D5602F7F0E', name: 'Boating', selected: false },
   { value: 'A59947B7-3376-49B4-AD02-C0423E08C5F7', name: 'Camping', selected: false },
   { value: 'B12FAAB9-713F-4B38-83E4-A273F5A43C77', name: 'Climbing', selected: false },
+  { value: 'AE42B46C-E4B7-4889-A122-08FE180371AE', name: 'Fishing', selected: false},
 ]
 
 router.get("/", (req, res) => {
@@ -98,7 +99,7 @@ router.get("/search-results", async (req, res) => {
           activityId +
           "&api_key=" +
           process.env.API,
-        requestOptions
+        requestOptions,
       )
     // retrieves data property from axios response
     // filters through parks returned by fetch request
