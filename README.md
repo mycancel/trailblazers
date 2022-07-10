@@ -34,6 +34,6 @@ Nate Traugh
 
 1. [LIVE SITE](https://intense-fjord-45584.herokuapp.com/)
 
-2. [REPOSITORY]()
+2. [REPOSITORY](https://github.com/mycancel/trailblazers)
 
 
