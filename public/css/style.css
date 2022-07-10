@@ -2,11 +2,16 @@
     background-image: url("../img/nationalpark5.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     font-size: 72px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: antiquewhite;
+    border-radius: 5%;
 }
+
+/* .container .jumbotron {
+
+} */
 
 #h1 {
     text-align: center;
@@ -23,30 +28,29 @@
 
 #loggedindash {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
 #logout {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
 #loggedoutdash {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
 #loginlink {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
 .container {
-    margin-bottom: 5rem;
     border-radius: 5%;
 }
 
@@ -71,14 +75,11 @@
     top: 10%;
     left: 47%;
     transform: translate(-50%, -5%);
-    background-color: rgba(8, 8, 8, 0.5);
-    text-align: center;
-    color:beige;
-}
 
 ul {
     list-style-type: none;
 }
+
 
 html {
     color: black;
