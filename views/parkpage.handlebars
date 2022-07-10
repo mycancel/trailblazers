@@ -6,7 +6,9 @@
       <div class="card-body" id="parkpageinfo">
         <article>
           <h2 class="p-3" style="font-weight: bold;">{{name}}</h2>
-          {{#if loggedIn}}
+          {{#if checkFavorite}}
+          <button type="button" id="favorite-check" value="{{name}}"/>Unfavorite</button>
+          {{else if loggedIn}}
           <button type="button" id="favorite-check" value="{{name}}"/>Favorite</button>
           {{/if}}
         </article>
