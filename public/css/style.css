@@ -55,66 +55,77 @@
 }
 
 .card-text {
-    /* color: black; */
     font-weight: 700;
 }
 
 #park-image {
-    /* background-size: cover; */
-    viewport-fit: auto;
     margin: 2rem;
     justify-content: center;
     border-radius: 2%;
+    width:94%;
 }
 
 #info-card {
-
-}
-
-#info-card p {
-    font-size: larger;
-}
-
-#parkpageinfo {
-    /* position: absolute; */
-    background-color: rgba(8, 8, 8, 0.5);
-    margin-top: 40px;
-    text-align: center;
+    viewport-fit: auto;
+    margin: 2rem;
+    align-items: center;
+    justify-content: center;
     border-radius: 15%;
-}
-
+    position:absolute;
+    top: 10%;
+    left: 47%;
+    transform: translate(-50%, -5%);
 
 ul {
     list-style-type: none;
 }
 
-/* html {
-    color: black
+
+html {
+    color: black;
     background-image: none !important;
     background: #1f1f1f !important;
-} */
+}
 
-@media only screen and (min-width: 390px) {
-    #h1 {
-      text-size-adjust: auto;
+@media only screen and (max-width: 480px)
+{
+    #trailblazers {
+        font-size: 50px;
     }
+}
+
+@media only screen and (max-width: 769px)
+{
+    #image-div {
+        width: 75%;
+        height: auto;
+    }
+
+    #park-image {
+        margin-top: 2%;
+        margin-left: 12%;
+    }
+
     #info-card {
-        text-size-adjust: auto;
+        margin-left: 3%;
     }
-  }
-  @media only screen and (min-width: 412px) {
-    #jumbosearch {
-      text-size-adjust: auto;
+}
+
+@media only screen and (max-width: 1199px)
+{
+    #image-div {
+        viewport-fit: auto;
+        margin: 2rem;
+        justify-content: center;
+        border-radius: 2%;
     }
+    
     #info-card {
-        text-size-adjust: auto;
+        viewport-fit: auto;
+        position: relative;
+        top:0%;
+        left: 47%;
+        justify-content: center;
     }
-  }
-  @media only screen and (max-width: 768px) {
-    #parkpageinfo {
-        left: 0%;
-    }
-    #info-card {
-        left: 0%;
-    }
-  }
+
+}
