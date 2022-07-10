@@ -28,25 +28,25 @@
 
 #loggedindash {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
 #logout {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
 #loggedoutdash {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
 #loginlink {
     text-decoration: none;
-    color: burlywood;
+    color: white;
     font-size: 20px;
 }
 
@@ -83,15 +83,16 @@
     border-radius: 15%;
 }
 
+
 ul {
     list-style-type: none;
 }
 
-html {
+/* html {
     color: black
     background-image: none !important;
     background: #1f1f1f !important;
-}
+} */
 
 @media only screen and (min-width: 390px) {
     #h1 {

@@ -5,6 +5,7 @@ const { Favorite } = require('../../models');
 router.post('/', async (req, res) => {
     try {
         const favoriteData = await Favorite.create({
+            name: req.body.name,
             park_code: req.body.parkCode,
             user_id: req.session.user_id
         })
@@ -18,7 +19,7 @@ router.delete('/', async (req, res) => {
   try {
     const favoriteData = await Favorite.destroy({
       where: {
-        park_code: req.body.parkCode,
+        name: req.body.name,
         user_id: req.session.user_id,
       },
     });
