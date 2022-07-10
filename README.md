@@ -1,6 +1,6 @@
 # trailblazers
 
-[LIVE SITE](Heroku)
+[LIVE SITE](https://intense-fjord-45584.herokuapp.com/)
 
 ## TABLE OF CONTENTS
 
@@ -32,8 +32,8 @@ Nate Traugh
 
 ## RESOURCES
 
-1. [LIVE SITE]()
+1. [LIVE SITE](https://intense-fjord-45584.herokuapp.com/)
 
 2. [REPOSITORY]()
 
-3. [Heroku-Demo]()
+
