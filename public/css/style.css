@@ -2,16 +2,11 @@
     background-image: url("../img/nationalpark5.jpg");
     background-size: cover;
     background-position: center;
-    /* background-repeat: no-repeat; */
     font-size: 72px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: antiquewhite;
     border-radius: 5%;
 }
-
-/* .container .jumbotron {
-
-} */
 
 #h1 {
     text-align: center;
@@ -88,6 +83,10 @@ html {
     color: black;
     background-image: none !important;
     background: #1f1f1f !important;
+}
+
+#signup-form, #login-form, .login-header {
+    color:white;
 }
 
 @media only screen and (max-width: 480px)
