@@ -51,6 +51,8 @@ router.get("/:code", async (req, res) => {
     const hoursOfOp = data[0].operatingHours[0].standardHours;
     const imgURL = data[0].images[0].url;
 
+    console.log(imgURL);
+
     // returns park information
     const park = {
       name: name,
@@ -64,8 +66,6 @@ router.get("/:code", async (req, res) => {
     };
     // Serializes data
     const parkInfo = JSON.parse(JSON.stringify(park));
-
-    console.log(checkFavorite);
 
     // Renders parks to parkpage
     res.render("parkpage", parkInfo);

@@ -8,8 +8,10 @@
   <div class="col-md-10 card-body" id="info-card">
 
     <h2 class="p-3" style="font-weight: bold;">{{name}}</h2>
-
-    {{#if loggedIn}}
+    
+    {{#if checkFavorite}}
+    <button type="button" id="favorite-check" value="{{name}}"class="btn btn-outline-success p-1 mb-2">Unfavorite</button>
+    {{else if loggedIn}}
     <button type="button" id="favorite-check" value="{{name}}" class="btn btn-outline-success p-1 mb-2">Favorite</button>
     {{/if}}
 
@@ -45,8 +47,6 @@
       <li>Saturday: {{hoursOfOp.saturday}}</li>
       <li>Sunday: {{hoursOfOp.sunday}}</li>
     </ul>
-
-
 
   </div>
 
