@@ -75,11 +75,11 @@
     top: 10%;
     left: 47%;
     transform: translate(-50%, -5%);
+}
 
 ul {
     list-style-type: none;
 }
-
 
 html {
     color: black;
