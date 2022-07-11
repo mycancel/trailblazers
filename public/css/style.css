@@ -75,6 +75,9 @@
     top: 10%;
     left: 47%;
     transform: translate(-50%, -5%);
+    color: beige;
+    background-color: rgba(8, 8, 8, 0.80);
+    text-align: center;
 }
 
 ul {
