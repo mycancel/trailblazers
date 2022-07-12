@@ -20,10 +20,8 @@ router.get('/', async (req, res) => {
       });
 
     } else {
-      const message = { message: 'No parks favorited.' };
       res.render('dashboard', {
-        message,
-        loggedIn: req.session.logged_in,
+        loggedIn: req.session.logged_in
       });
     }
 
